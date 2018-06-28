@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Todo list</title>
+    </head>
+    <body>
+    <div id="app">
+        <h2>Todo list</h2>
+        <ul>
+            <li v-for="todo in todos" style="display:block">
+                <todo-component v-bind:todo="todo" ></todo-component>
+                 <button type="button" v-on:click="removeTodo($index)">X</button>
+            </li>
+        </ul>
+
+        <p>
+            <input type="text" v-model="todoText" v-on:keyup.esc="clearTodo" v-on:keyup.enter="createTodo" >
+            <button v-on:click="createTodo"> Save </button>
+        </p>
+
+    </div>
+    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    </body>
+</html>
